@@ -1,0 +1,104 @@
+h1 ,h3 ,h4, h5, p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:   #ffffffe1;
+}
+h5{
+    font-size: 1.5rem;
+}
+p{
+    font-size: 1.2rem;
+}
+.founded{
+    justify-items: space-between;
+}
+.founded-left{
+    display: flex;
+}
+.founded-left p{
+    margin-left: 1rem;
+    text-align: 50px;
+    max-width: 60%;
+    margin-top : 50px;
+    padding : 20px;
+    font-size: 25px;
+}
+.img-1{
+    margin-left: 170px;
+    width: 350px;
+    height: 350px;
+}
+
+.mission{
+    border: 10px solid #202e19;
+    
+}
+.mission h1{
+    text-align: center;
+    width: 60%;
+    margin: 30px auto;
+    border: 10px solid #202e19;
+    border-radius : 80%;
+}
+.mission h1:hover{
+    background-color: rgb(62, 105, 92);
+    color: #d0d011;
+}
+.mission p{
+    margin-left: 1rem;
+    text-align: 50px;
+    margin-top : 50px;
+    padding : 20px;
+    font-size: 25px;
+}
+
+.vision h1{
+    text-align: center;
+    width: 60%;
+    margin: 30px auto;
+    border: 10px outset #202e19;
+    border-radius : 80%;
+}
+.vision h1:hover{
+    background-color: rgb(62, 105, 92);
+    color: #d0d011;
+}
+
+.vision p{
+    margin-left: 1rem;
+    text-align: 50px;
+    padding : 20px;
+    font-size: 25px;
+}
+
+p .text-center{
+    font-size: 23px;
+}
+
+.team-member img{
+   border-radius: 60%;
+    height: 270px;
+    width: 230px;
+}
+.team-member img:hover{
+    animation: bounce 2.5s linear infinite;
+}
+@keyframes bounce {
+    30% {
+        transform: translateX(10%);
+    }
+50% {
+        transform: translateY(-10%);
+    }
+}
+@media screen and (max-width: 900px) {
+    /* One or more CSS rules to apply when the query is satisfied */
+.founded-left, .img-1{
+display: block;
+}  
+.founded-left{
+    width: 100%;
+}
+.img-1{
+    margin: 9px;
+}
+}

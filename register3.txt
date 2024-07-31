@@ -1,0 +1,16 @@
+First name: joan
+Last name: Amumpaire
+Email: jamumpaire1@gmail.com
+Password: dd54d716aaa387acf14d145d0c89d106
+First name: ja
+Last name: morant
+Email: jamorant@nba.com
+Password: 827ccb0eea8a706c4c34a16891f84e7b
+First name: Kawambe
+Last name: Samantha
+Email: samie1@gmail.com
+Password: f74a10e1d6b2f32a47b8bcb53dac5345
+First name: me
+Last name: you
+Email: meyou@me.com
+Password: dbc4d84bfcfe2284ba11beffb853a8c4
