@@ -27,21 +27,21 @@ if(isset($_POST['signUp'])){
 
 
     // //mysql en fellows
-    // $checkEmail = "SELECT * FROM users WHERE email='$email' ";
-    // $result = $conn->query($checkEmail);
-    // if($result->num_rows > 0){
-    //     echo "Email already exists";
-    // } else {
-    //     $insertQuery = "INSERT INTO users (FirstName, LastName, Email, Passwords) VALUES ('$firstName', '$lastName', '$email', '$hashedPassword')";
-    //     echo $insertQuery;        
-    //     if($conn->query($insertQuery) === TRUE){
-    //         //echo "Registration successful"; // Debugging output
-    //         header("Location: register.php");
-    //         exit();
-    //     } else {
-    //         echo "Error: " . $conn->error;
-    //     }
-    // }
+    $checkEmail = "SELECT * FROM users WHERE email='$email' ";
+    $result = $conn->query($checkEmail);
+    if($result->num_rows > 0){
+        echo "Email already exists";
+    } else {
+        $insertQuery = "INSERT INTO users (FirstName, LastName, Email, Passwords) VALUES ('$firstName', '$lastName', '$email', '$hashedPassword')";
+        echo $insertQuery;        
+        if($conn->query($insertQuery) === TRUE){
+            //echo "Registration successful"; // Debugging output
+            header("Location: register.php");
+            exit();
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    }
 }
 
 if (isset($_POST['signIn'])){
@@ -74,34 +74,26 @@ if (isset($_POST['signIn'])){
     }
 
 
-    // $check ="SELECT email, Passwords FROM users WHERE email ='$email' AND passwords= '$hashedPassword'";
-    //    $query=$conn->query($check);
-    //         if ($query->num_rows === 1) {
-    //             $row = $query->fetch_assoc();
+    $check ="SELECT email, Passwords FROM users WHERE email ='$email' AND passwords= '$hashedPassword'";
+       $query=$conn->query($check);
+            if ($query->num_rows === 1) {
+                $row = $query->fetch_assoc();
 
-    //             // Debugging: Print the fetched row to verify its structure
-    //             echo "<pre>";
-    //             print_r($row);
-    //             echo "</pre>";
+                // Debugging: Print the fetched row to verify its structure
+                // echo "<pre>";
+                // print_r($row);
+                // echo "</pre>";
 
-    //            // if (isset($row['passwords'])) {
-    //                 //  Print the stored password hash
-    //                 echo "Stored password hash: " . $row['passwords'] . "<br>";
-    //                 echo "Entered password: " . $password . "<br>";
-    //             //   echo $row;
-    //             //   die();
-    //           if(isset($row['password'])) {
-    //               if (password_verify($password, $row['password'])) {
-    //                         $_SESSION['email'] = $row['email'];                
-    //                         header("Location: index.php");
-    //                         exit();
-    //                   } else {
-    //                        echo "Not Found, Incorrect Email or Password! ):😂";
-    //                     }                  
-
-    //             }
-    //         }
-        
-        
+               // if (isset($row['passwords'])) {
+                    //  Print the stored password hash
+                    // echo "Stored password hash: " . $row['passwords'] . "<br>";
+                    // echo "Entered password: " . $password . "<br>";
+                //   echo $row;
+                //   die();
+                            $_SESSION['email'] = $row['email'];                
+                            header("Location: index.php");
+                            exit();
+                      } else {
+                           echo "Not Found, Incorrect Email or Password! ):😂";
+                        }                  
 }
-
