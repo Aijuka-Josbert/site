@@ -1,147 +1,131 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include('navfooter/navbar.php');  ?>
-<?php echo "<link rel='stylesheet' type='text/css' href='navfooter/navbar.css' />"; ?>
-<?php echo "<link rel='stylesheet' type='text/css' href='about.css' />";  ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about BeyondCode, our mission, our team, and our long-term vision.">
+    <title>BeyondCode | About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navfooter/navbar.css">
+    <link rel="stylesheet" href="navfooter/footer.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+<div class="page-wrap">
+    <?php include('navfooter/navbar.php'); ?>
 
-<section class="header-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">We help Buisnesses of <span>Every
-                    Size</span> from Enterprenuers to Iconic brands</h1>
-                <h5 class="text-center">with our updated tools we use we ensure quality and
-                    best out put as provided to us by our beloved client.
-                </h5>
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <p class="about-kicker">About BeyondCode</p>
+                <h1>We help businesses of every size move faster with software.</h1>
+                <p>From entrepreneurs to established brands, we design and deliver practical digital products that support growth.</p>
             </div>
-        </div>
-    </div>
-</section>
-<section class='founded' name='founded'>
-    <div class='founded'>
-        <h3 class='f center'>Founded in 2017</h3>
-        <div class='founded-left'>
-            <p>Our company was founded in 2017 by a group of young and energetic people
-                who had a vision of creating a company that would provide quality services
-                to its clients. We started off as a small company with a few employees
-                but we have since grown to become one of the leading companies in our
-                industry. We have a team of highly skilled and experienced professionals
-                who are dedicated to providing the best possible services to our clients.</p>
-            <div class='img-1'>
-                <img src="./indimges/products/about/friends.png" alt="meeting" width="400px" height="300px">
+        </section>
+
+        <section class="founded-section">
+            <div class="container founded-grid">
+                <div>
+                    <h2 class="section-title">Founded In 2017</h2>
+                    <p>Our company began with a small team of energetic builders who believed East African businesses deserved world-class software support.</p>
+                    <p>Since then, we have grown into a multidisciplinary team focused on quality engineering, thoughtful design, and strong client partnerships.</p>
+                </div>
+                <figure class="founded-image">
+                    <img src="./indimges/products/about/friends.png" alt="BeyondCode team in a planning session">
+                </figure>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
+        <section class="mission-vision-section">
+            <div class="container mission-vision-grid">
+                <article class="mv-card">
+                    <h3>Our Mission</h3>
+                    <p>Provide dependable, modern software services that help our clients achieve measurable outcomes and sustain growth through technology.</p>
+                </article>
 
-<section class='#mission'>
-    <div class='mission'>
-        <h1>Our Mission</h1>
-        <p>Our mission is to provide our clients with the best possible services
-            and to help them achieve their goals. We believe that by providing quality
-            services, we can make a positive impact on our clients' businesses and
-            help them succeed. We are committed to providing our clients with the
-            best possible services and to helping them achieve their goals. We believe
-            that by providing quality services, we can make a positive impact on our
-            clients' businesses and help them succeed.</p>
-    </div>
-</section>
-
-<section class='vision'>
-    <div class='vision'>
-        <h1>Our Vision</h1>
-        <img src='./indimges/products/about/vision.jpeg' alt='vision'>
-        <p>
-            The software company's vision is to be the leading provider of innovative, user-centric software solutions that empower businesses and individuals to achieve their goals. By combining cutting-edge technology,
-            a relentless commitment to excellence, and a deep understanding of customer needs, the company
-            strives to redefine the software industry and positively impact the lives of its customers. Underpinned by a culture of technological excellence, continuous innovation, collaboration, and integrity,
-            the company aims to develop a portfolio of transformative products, deliver exceptional customer experiences, and drive sustainable
-            growth - ultimately cementing its position as a trusted industry leader.</p>
-    </div>
-</section>
-
-<section class='futuristic'>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12"> 
-                <h4 class="text-center">Our Future Goal</h4>
-                <p class="text-center">By 2030, our software company will become the driving force behind a transformative shift in the way businesses and individuals leverage technology to achieve their goals. Through pioneering groundbreaking AI-powered solutions, we will redefine the boundaries of what's
-                    possible in the digital realm. Our clients can expect to see significant improvements in productivity, efficiency,
-                    and decision-making capabilities as our products integrate intelligent automation, predictive analytics, and intuitive interfaces.
-                    Beyond the corporate landscape, our software will also enrich the personal lives of end-users, providing intelligent digital assistants and immersive experiences that enhance productivity, wellness, and quality of life. By 2030, our software company will be synonymous with technological leadership, customer-centricity, and a relentless pursuit of progress, firmly establishing ourselves as the go-to partner for organizations and individuals seeking to thrive in the digital age.
-                </p>
+                <article class="mv-card">
+                    <h3>Our Vision</h3>
+                    <p>Become the most trusted software delivery partner in the region by combining innovation, reliability, and a deep commitment to client success.</p>
+                </article>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<section class='meet the team'>
-    <div class='meet the team'>
-        <h3 class='text-center'>Meet The Team</h3>
-        <div class='row'>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/mor.jpg' alt='MORGAN'>
-                    <h4>Odwong Morgan</h4>
-                    <p>CEO</p>
+        <section class="future-section">
+            <div class="container future-card">
+                <h2 class="section-title">Our Future Goal</h2>
+                <p>By 2030, BeyondCode aims to drive a new level of digital capability for organizations across sectors through AI-assisted workflows, efficient web platforms, and secure business systems that are practical to adopt.</p>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Meet The Team</h2>
+                <div class="team-grid">
+                    <article class="team-card">
+                        <img src="./indimges/products/about/team2/mor.jpg" alt="Odwong Morgan">
+                        <div class="team-card-body">
+                            <h3>Odwong Morgan</h3>
+                            <p>CEO</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="./indimges/products/about/team2/jos.jpg" alt="Aijuka Josbert">
+                        <div class="team-card-body">
+                            <h3>Aijuka Josbert</h3>
+                            <p>Programmer</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="./indimges/products/about/team2/ian.png" alt="Kwagala Ian">
+                        <div class="team-card-body">
+                            <h3>Kwagala Ian</h3>
+                            <p>Web Designer</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="./indimges/products/about/team2/jona.jpg" alt="Jonaims">
+                        <div class="team-card-body">
+                            <h3>Jonaims</h3>
+                            <p>Programmer</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="./indimges/products/about/team2/sheba.jpg" alt="Nkinzi Sheba">
+                        <div class="team-card-body">
+                            <h3>Nkinzi Sheba</h3>
+                            <p>Web Designer</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="./indimges/products/about/team2/ariana.jpg" alt="Babirye Stephanie">
+                        <div class="team-card-body">
+                            <h3>Babirye Stephanie</h3>
+                            <p>Marketing Director</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card">
+                        <img src="./indimges/products/about/team2/moses.png" alt="Gidugai Moses">
+                        <div class="team-card-body">
+                            <h3>Gidugai Moses</h3>
+                            <p>Chief Advisor</p>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/jos.jpg' alt='LUNATIC'>
-                    <h4>Aijuka Josbert</h4>
-                    <p>Programmer</p>
-                </div>
-            </div>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/ian.png' alt='IAN'>
-                    <h4>Kwagala Ian</h4>
-                    <p>Web Designer</p>
-                </div>
-            </div>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/' alt='steve'>
-                    <h4>Steven John</h4>
-                    <p>Asst Director</p>
-                </div>
-            </div>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/jona.jpg' alt='jonaims'>
-                    <h4>Jonaims</h4>
-                    <p>Programmer</p>
-                </div>
-            </div>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/sheba.jpg' alt='sheba' >
-                    <h4>Nkinzi Sheba</h4>
-                    <p>Web Designer</p>
-                </div>
-            </div>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/ariana.jpg' alt='ariana'>
-                    <h4>Babirye Stephanie</h4>
-                    <p>Marketing Director</p>
-                </div>
-            </div>
-            <div class='col-md-4'>
-                <div class='team-member'>
-                    <img src='./indimges/products/about/team2/moses.png' alt='moses'>
-                    <h4>Gidugai Moses</h4>
-                    <p>Cheif Advisor</p>
-                </div>
-            </div>
-</section>
+        </section>
+    </main>
 
+    <?php include('navfooter/footer.php'); ?>
+</div>
 
-<?php include('<navfooter/footer.php');  ?>
-
+<script src="navfooter/navbar.js"></script>
+</body>
 </html>

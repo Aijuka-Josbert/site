@@ -1,104 +1,153 @@
-h1 ,h3 ,h4, h5, p{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:   #ffffffe1;
+.about-hero {
+    padding: 5rem 0 4.2rem;
+    background:
+        radial-gradient(900px 340px at 95% -10%, rgba(255, 255, 255, 0.2), transparent 70%),
+        linear-gradient(135deg, #0da8a1, #0c7d79 58%, #0b6678);
 }
-h5{
-    font-size: 1.5rem;
+
+.about-kicker {
+    margin: 0 0 0.9rem;
+    font-size: 0.83rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.9);
 }
-p{
+
+.about-hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    max-width: 18ch;
+}
+
+.about-hero p {
+    margin: 1rem 0 0;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 58ch;
+}
+
+.founded-section,
+.mission-vision-section,
+.future-section,
+.team-section {
+    padding: 4.4rem 0;
+}
+
+.founded-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 1.8rem;
+    align-items: center;
+}
+
+.founded-grid p + p {
+    margin-top: 0.8rem;
+}
+
+.founded-image {
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.founded-image img {
+    width: 100%;
+    min-height: 280px;
+    object-fit: cover;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.mv-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #dce8eb;
+    box-shadow: var(--shadow-soft);
+    padding: 1.2rem;
+}
+
+.mv-card h3 {
+    margin: 0 0 0.6rem;
     font-size: 1.2rem;
 }
-.founded{
-    justify-items: space-between;
-}
-.founded-left{
-    display: flex;
-}
-.founded-left p{
-    margin-left: 1rem;
-    text-align: 50px;
-    max-width: 60%;
-    margin-top : 50px;
-    padding : 20px;
-    font-size: 25px;
-}
-.img-1{
-    margin-left: 170px;
-    width: 350px;
-    height: 350px;
+
+.future-card {
+    background: #0f212b;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    padding: 1.5rem;
 }
 
-.mission{
-    border: 10px solid #202e19;
-    
-}
-.mission h1{
-    text-align: center;
-    width: 60%;
-    margin: 30px auto;
-    border: 10px solid #202e19;
-    border-radius : 80%;
-}
-.mission h1:hover{
-    background-color: rgb(62, 105, 92);
-    color: #d0d011;
-}
-.mission p{
-    margin-left: 1rem;
-    text-align: 50px;
-    margin-top : 50px;
-    padding : 20px;
-    font-size: 25px;
+.future-card .section-title,
+.future-card p {
+    color: #d9e6eb;
 }
 
-.vision h1{
-    text-align: center;
-    width: 60%;
-    margin: 30px auto;
-    border: 10px outset #202e19;
-    border-radius : 80%;
-}
-.vision h1:hover{
-    background-color: rgb(62, 105, 92);
-    color: #d0d011;
+.team-grid {
+    margin-top: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
 }
 
-.vision p{
-    margin-left: 1rem;
-    text-align: 50px;
-    padding : 20px;
-    font-size: 25px;
+.team-card {
+    background: #fff;
+    border: 1px solid #dce8eb;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
 }
 
-p .text-center{
-    font-size: 23px;
-}
-
-.team-member img{
-   border-radius: 60%;
-    height: 270px;
-    width: 230px;
-}
-.team-member img:hover{
-    animation: bounce 2.5s linear infinite;
-}
-@keyframes bounce {
-    30% {
-        transform: translateX(10%);
-    }
-50% {
-        transform: translateY(-10%);
-    }
-}
-@media screen and (max-width: 900px) {
-    /* One or more CSS rules to apply when the query is satisfied */
-.founded-left, .img-1{
-display: block;
-}  
-.founded-left{
+.team-card img {
     width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
-.img-1{
-    margin: 9px;
+
+.team-card-body {
+    padding: 0.8rem 0.9rem 1rem;
 }
+
+.team-card-body h3 {
+    margin: 0;
+    color: #162228;
+    font-size: 1rem;
+}
+
+.team-card-body p {
+    margin-top: 0.35rem;
+    color: #5a6a74;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+    .founded-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .about-hero {
+        padding-top: 4.8rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
 }

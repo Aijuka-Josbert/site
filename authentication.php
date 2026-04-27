@@ -1,99 +1,92 @@
 <?php
-
- //error_checking;
-//echo $password; ch3cks for errors
-    //die(); 
-
-$con=include('config/db_connect.php');
+require_once __DIR__ . '/config/db_connect.php';
 
 session_start();
-//echo "here";
 
-if(isset($_POST['signUp'])){
-    $firstName = $conn->real_escape_string($_POST['fname']);
-    $lastName = $conn->real_escape_string($_POST['lname']);
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = $conn->real_escape_string($_POST['password']);
-    $hashedPassword = md5($password);
-    //file txt
-    $open = fopen('register3.txt',"a");
-    if (!$open) {
-        echo "error ";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: register.php');
+    exit();
+}
+
+if (isset($_POST['signUp'])) {
+    $firstName = trim($_POST['fname'] ?? '');
+    $lastName = trim($_POST['lname'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+    if ($firstName === '' || $lastName === '' || $email === '' || $password === '') {
+        header('Location: register.php');
+        exit();
     }
-    fwrite($open, "First name: " . $firstName . "\n" . "Last name: " . $lastName . "\n" ."Email: " . $email . "\n" . "Password: " .$hashedPassword . "\n");
-    fclose($open);
-    echo "Account created successful";
-    header("Location: register.php");
 
+    $checkStmt = $conn->prepare('SELECT user_id FROM users WHERE email = ? LIMIT 1');
+    $checkStmt->bind_param('s', $email);
+    $checkStmt->execute();
+    $checkStmt->store_result();
 
-    // //mysql en fellows
-    $checkEmail = "SELECT * FROM users WHERE email='$email' ";
-    $result = $conn->query($checkEmail);
-    if($result->num_rows > 0){
-        echo "Email already exists";
-    } else {
-        $insertQuery = "INSERT INTO users (FirstName, LastName, Email, Passwords) VALUES ('$firstName', '$lastName', '$email', '$hashedPassword')";
-        echo $insertQuery;        
-        if($conn->query($insertQuery) === TRUE){
-            //echo "Registration successful"; // Debugging output
-            header("Location: register.php");
+    if ($checkStmt->num_rows > 0) {
+        $checkStmt->close();
+        header('Location: register.php');
+        exit();
+    }
+    $checkStmt->close();
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    $insertStmt = $conn->prepare('INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)');
+    $insertStmt->bind_param('ssss', $firstName, $lastName, $email, $passwordHash);
+
+    if ($insertStmt->execute()) {
+        $insertStmt->close();
+        header('Location: register.php');
+        exit();
+    }
+
+    $insertStmt->close();
+    header('Location: register.php');
+    exit();
+}
+
+if (isset($_POST['signIn'])) {
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+    if ($email === '' || $password === '') {
+        header('Location: register.php');
+        exit();
+    }
+
+    $selectStmt = $conn->prepare('SELECT user_id, email, password FROM users WHERE email = ? AND status = "active" LIMIT 1');
+    $selectStmt->bind_param('s', $email);
+    $selectStmt->execute();
+    $result = $selectStmt->get_result();
+    $user = $result->fetch_assoc();
+    $selectStmt->close();
+
+    if ($user) {
+        $storedPassword = $user['password'];
+        $validPassword = password_verify($password, $storedPassword);
+
+        // Support legacy md5 values and upgrade hash on successful login.
+        if (!$validPassword && hash_equals($storedPassword, md5($password))) {
+            $validPassword = true;
+            $newHash = password_hash($password, PASSWORD_DEFAULT);
+            $upgradeStmt = $conn->prepare('UPDATE users SET password = ? WHERE user_id = ?');
+            $upgradeStmt->bind_param('si', $newHash, $user['user_id']);
+            $upgradeStmt->execute();
+            $upgradeStmt->close();
+        }
+
+        if ($validPassword) {
+            $_SESSION['user_id'] = (int) $user['user_id'];
+            $_SESSION['email'] = $user['email'];
+            header('Location: index.php');
             exit();
-        } else {
-            echo "Error: " . $conn->error;
         }
     }
+
+    header('Location: register.php');
+    exit();
 }
 
-if (isset($_POST['signIn'])){
-    $email = $conn->real_escape_string($_POST['email']);
-    $password = $conn->real_escape_string($_POST['password']);
-    $hashedPassword = md5($password);
-   
-    if (file_exists('register3.txt')) {
-        $file = file_get_contents('register3.txt');
-        $details = explode("\n", $file);
-        $stored_email = "";
-        $stored_password = "";
-        foreach ($details as $detail) {
-            $detail = trim($detail);
-            if (str_starts_with($detail, "Email: ")) {
-                $stored_email = str_replace("Email: ", "", $detail);
-            }
-            if (str_starts_with($detail, "Password: ")) {
-                $stored_password = str_replace("Password: ", "", $detail);
-            }
-            if ($stored_email === $email && $stored_password === $hashedPassword) {
-                echo "login successful";
-                header("Location: index.php");
-                exit;
-            }
-        }
-        echo "Invalid password or Email";
-    } else {
-        echo "File not found";
-    }
-
-
-    $check ="SELECT email, Passwords FROM users WHERE email ='$email' AND passwords= '$hashedPassword'";
-       $query=$conn->query($check);
-            if ($query->num_rows === 1) {
-                $row = $query->fetch_assoc();
-
-                // Debugging: Print the fetched row to verify its structure
-                // echo "<pre>";
-                // print_r($row);
-                // echo "</pre>";
-
-               // if (isset($row['passwords'])) {
-                    //  Print the stored password hash
-                    // echo "Stored password hash: " . $row['passwords'] . "<br>";
-                    // echo "Entered password: " . $password . "<br>";
-                //   echo $row;
-                //   die();
-                            $_SESSION['email'] = $row['email'];                
-                            header("Location: index.php");
-                            exit();
-                      } else {
-                           echo "Not Found, Incorrect Email or Password! ):😂";
-                        }                  
-}
+header('Location: register.php');
+exit();

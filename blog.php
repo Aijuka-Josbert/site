@@ -1,85 +1,109 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include('navfooter/navbar.php');  ?>
-<?php echo "<link rel='stylesheet' type='text/css' href='navfooter/navbar.css' />"; ?>
-<?php echo "<link rel='stylesheet' type='text/css' href='blog.css' />";  ?>
-<!--blog -->
-    <header>
-        <h1>BeyondCode Company</h1>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read BeyondCode insights on software engineering, AI, and product delivery.">
+    <title>BeyondCode | Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navfooter/navbar.css">
+    <link rel="stylesheet" href="navfooter/footer.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+<div class="page-wrap">
+    <?php include('navfooter/navbar.php'); ?>
 
-    <section id="home" class="section">
-        <h2>Welcome to Innovatech Solutions</h2>
-        <p>Your trusted partner in software engineering, delivering cutting-edge solutions to meet your business needs.</p>
-    </section>
-
-    <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>At Innovatech Solutions, we specialize in providing top-notch software engineering services, utilizing the latest technologies to drive your business forward.</p>
-    </section>
-
-    <section id="services" class="section">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Consulting</li>
-            <li>App Development</li>
-            <li>AI & Machine Learning</li>
-            <li>Blockchain Technology</li>
-            <li>IT Consultancy</li>
-        </ul>
-    </section>
-
-    <section id="blog" class="section">
-        <h2>Latest Blog Posts</h2>
-        <article>
-            <h3>Embracing New Technologies in Software Engineering</h3>
-            <p>The world of software engineering is constantly evolving with the advent of new technologies. From cloud computing to blockchain, we explore the latest trends shaping the industry.</p>
-        </article>
-        <article>
-            <h3>How AI is Simplifying the IT Sector</h3>
-            <p>Artificial Intelligence (AI) is revolutionizing the IT sector by automating tasks, improving decision-making processes, and enhancing overall efficiency. Learn how AI is transforming the way we work.</p>
-        </article>
-        <article>
-            <h3>The Future of Blockchain in Software Development</h3>
-            <p>Blockchain technology is not just for cryptocurrencies. Discover how it's being integrated into software development to create more secure and transparent applications.</p>
-        </article>
-    </section>
-
-    <section id="testimonials" class="section">
-        <h2>Testimonials</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial active">
-                <p>"Innovatech Solutions transformed our business with their innovative solutions and excellent service. Highly recommend!" - Jane Doe, CEO of TechCorp</p>
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <p class="hero-kicker">Engineering Journal</p>
+                <h1>Latest Thinking From BeyondCode</h1>
+                <p>Practical notes on building scalable software, managing delivery, and integrating modern technologies into business operations.</p>
             </div>
-            <div class="testimonial">
-                <p>"Their expertise in AI and machine learning helped us streamline our operations and improve efficiency." - John Smith, CTO of Innovatech Industries</p>
+        </section>
+
+        <section class="blog-layout">
+            <div class="container blog-layout-grid">
+                <div class="posts-column">
+                    <article class="post-card">
+                        <h2>Embracing New Technologies in Software Engineering</h2>
+                        <p>Software engineering evolves continuously. From cloud systems to modern integration patterns, teams can deliver better products by choosing technology based on clear business outcomes.</p>
+                    </article>
+
+                    <article class="post-card">
+                        <h2>How AI Is Simplifying the IT Sector</h2>
+                        <p>AI now supports ticket classification, report generation, anomaly detection, and workflow automation. Used correctly, it reduces repetitive work and improves decision speed.</p>
+                    </article>
+
+                    <article class="post-card">
+                        <h2>The Future of Blockchain in Software Development</h2>
+                        <p>Beyond cryptocurrency, blockchain patterns can support transparent records, verification workflows, and tamper-evident logs in sectors that require trust and traceability.</p>
+                    </article>
+
+                    <section class="testimonial-panel" id="testimonials">
+                        <h2 class="section-title">Testimonials</h2>
+                        <div class="testimonial-slider">
+                            <div class="testimonial active">
+                                <p>"Innovatech Solutions transformed our business with their innovative solutions and excellent service. Highly recommend!" - Jane Doe, CEO of TechCorp</p>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Their expertise in AI and machine learning helped us streamline our operations and improve efficiency." - John Smith, CTO of Innovatech Industries</p>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Fantastic team to work with! Their blockchain solutions are top-notch." - Emily Johnson, CFO of FinTech Co.</p>
+                            </div>
+                        </div>
+                        <div class="slider-actions">
+                            <button id="prev-testimonial" type="button">Previous</button>
+                            <button id="next-testimonial" type="button">Next</button>
+                        </div>
+                    </section>
+
+                    <section class="contact-panel" id="contact">
+                        <h2 class="section-title">Contact Us</h2>
+                        <form id="contact-form" class="contact-form">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </section>
+                </div>
+
+                <aside class="sidebar-column">
+                    <div class="side-card">
+                        <h3>Topics</h3>
+                        <ul>
+                            <li>Web Platforms</li>
+                            <li>Mobile Delivery</li>
+                            <li>AI Workflows</li>
+                            <li>Security & Reliability</li>
+                        </ul>
+                    </div>
+
+                    <div class="side-card">
+                        <h3>Need A Build Partner?</h3>
+                        <p>Our team helps companies design, ship, and scale software products in predictable milestones.</p>
+                        <a class="btn" href="service.php">View Services</a>
+                    </div>
+                </aside>
             </div>
-            <div class="testimonial">
-                <p>"Fantastic team to work with! Their blockchain solutions are top-notch." - Emily Johnson, CFO of FinTech Co.</p>
-            </div>
-        </div>
-        <button id="prev-testimonial">Previous</button>
-        <button id="next-testimonial">Next</button>
-    </section>
+        </section>
+    </main>
 
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+    <?php include('navfooter/footer.php'); ?>
+</div>
 
-    <p>&copy; 2024 BeyondCode. All rights reserved.</p>
-
-    <script src="blog.js"></script>
-
+<script src="navfooter/navbar.js"></script>
+<script src="blog.js"></script>
+</body>
 </html>

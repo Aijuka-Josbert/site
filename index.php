@@ -1,138 +1,125 @@
 <?php
 session_start();
- include('config/db_connect.php');
-// session_start();
-
+include('config/db_connect.php');
 ?>
 
 <!DOCTYPE html>
-
 <html lang="en">
-<?php include('navfooter/navbar.php');  ?>
-<?php echo "<link rel='stylesheet' type='text/css' href='navfooter/navbar.css' />"; ?>
-<?php echo "<link rel='stylesheet' type='text/css' href='inde.css' />";  ?>
-<!-- <div style="text-align: center; padding: 5%;">
-    <p style="font-size: 20px; font-weight:bold;">
-        
-    <?php
-        // if(isset($_SESSION['email'])){
-        //     $email = $_SESSION['email'];
-        //     $query = mysqli_query($conn, "SELECT * FROM users WHERE Email='$email'");
-        //     while ($row = mysqli_fetch_array($query)) {
-        //         echo $row['FirstName'] . ' ' . $row['LastName'];
-        //     }
-        // }
-        ?>
-        
-    </p>
-     <a href="logout.php">logout</a>
- </div  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BeyondCode builds web platforms, mobile apps, and digital products for ambitious businesses.">
+    <title>BeyondCode | Software Development Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navfooter/navbar.css">
+    <link rel="stylesheet" href="navfooter/footer.css">
+    <link rel="stylesheet" href="inde.css">
+</head>
+<body>
+<div class="page-wrap">
+    <?php include('navfooter/navbar.php'); ?>
 
-<section class="home" id="home">
-        <div class="container">
-            <div class="sideimage1">
-                <img src="./indimges/welcomerimg.jpeg" alt="there's an image here" width="500" height="200">
-            </div>
-            <div class="content">
-                <h1>WELCOME OUR CLIENTS</h1>
-                <h4>A Software Development Company </h4>
-                <p>Engage With Us, <span>We Build Your Imagination.</span></p>
-                <a href="about.php" class="btn">About Us</a>
-                <a href="tel:+256759420168"><button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708"/>
-                        </svg>Contact Us</button></a>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section class="home-hero">
+            <div class="container hero-grid">
+                <figure class="hero-media">
+                    <img src="./indimges/welcomerimg.jpeg" alt="BeyondCode engineers collaborating in office">
+                </figure>
 
-    <section class="some-info" id="some-info">
-        <h4 class="center green-text">Details On Us</h4>
-        <div class="some-content">
-            <p>We are a software company ready to serve you in all of technological help you may need be <em>website development, mobile Application, webhosting, Domain services and any other <br>software you may be interested in we got you.</em></p>
-            <p>Come we work on customer Imagination into reality at the cheap affordable prices in Uganda trust us with your project we deliver it with best quality as we have the best designers and programmers to make sure it happens. <br>We will be happy when you our dear client reaches on to us.<br>We are Located on Kyaliwajjala-Namugongo road opposite crane gardens.</p>
-        </div>
-    </section>
-
-    <section class="product">
-        <div class="container-1">
-            <div class="products">
-                <h5 class="center green-text">Our Products</h5>
-                <div class="product-content">
-                    <div class="product-list">
-                        <div class="product-item">
-                            <ul>
-                                <li>Domain Services</li>
-                                <li>Web Hosting</li>
-                                <li>Website Development</li>
-                                <li>Mobile Application Development</li>
-                                <li>Software Development</li>
-                                <li>Web Designing</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="service.php"> <button class="center btn">Click here for More Info.</button></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="feedback" name="feedback">
-        <h5 class="center green-text">Feedback From Some Of Our Clients</h5>
-        <div class="row row-cols-1 row-cols-md-3 g-4 card-container">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./indimges/card/samie.png" class="card-img-top" alt="samie" height="150" width="150">
-                    <div class="card-body">
-                        <h5 class="card-title">Deputy UBOS</h5>
-                        <p class="card-text">I reached out to them to build a website for our business and can't believe their work as they truly outdid themselves and made it in a way that is user friendly. Thanks.</p>
+                <div class="hero-copy">
+                    <p class="hero-kicker">Software Engineering Studio</p>
+                    <h1>Welcome, clients. We build ideas into reliable digital products.</h1>
+                    <p>From strategy to launch, BeyondCode helps startups and established teams ship websites, apps, and tools that feel polished and perform at scale.</p>
+                    <div class="hero-actions">
+                        <a class="btn" href="about.php">About Us</a>
+                        <a class="btn secondary" href="tel:+256759420168">&#9742; Contact Us</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./indimges/card/comfy.png" class="card-img-top" alt="comfy" height="150" width="150">
-                    <div class="card-body">
-                        <h5 class="card-title">Lawyer At Uganda High court</h5>
-                        <p class="card-text">I can't believe their work as they met every request I made and turned great as well as they are easily accessed in need of changes.</p>
-                    </div>
+        </section>
+
+        <section class="details-section">
+            <div class="container">
+                <h2 class="section-title">Details About Us</h2>
+                <div class="details-card">
+                    <p>We are a software company ready to support your technology goals, including website development, mobile applications, web hosting, domain services, and custom digital systems.</p>
+                    <p>Our team turns customer imagination into practical, production-ready solutions at affordable prices in Uganda. We focus on quality execution, clear communication, and long-term support after delivery.</p>
+                    <p>Find us on Kyaliwajjala-Namugongo Road, opposite Crane Gardens.</p>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./indimges/card/hamza.png" class="card-img-top" alt="Hamza" height="150" width="150">
-                    <div class="card-body">
-                        <h5 class="card-title">CEO MultiTech</h5>
-                        <p class="card-text">Incredible work as I reached out to them in need of a banking system. It was done on time and perfected as well as taught us how to operate it. Great work.</p>
-                    </div>
+        </section>
+
+        <section class="services-preview">
+            <div class="container services-preview-grid">
+                <div>
+                    <h2 class="section-title">Our Core Services</h2>
+                    <p class="section-lead">Focused offerings for businesses that need fast delivery and strong technical foundations.</p>
+                    <ul class="service-pills">
+                        <li>Domain Services</li>
+                        <li>Web Hosting</li>
+                        <li>Website Development</li>
+                        <li>Mobile Application Development</li>
+                        <li>Software Development</li>
+                        <li>Web Design</li>
+                    </ul>
+                </div>
+                <div class="services-cta">
+                    <a class="btn" href="service.php">See Full Service Catalog</a>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./indimges/card/esi.png" class="card-img-top" alt="esi" height="150" width="150">
-                    <div class="card-body">
-                        <h5 class="card-title">Marketing Director Aviation</h5>
-                        <p class="card-text">Amazing team work and commitment from them. I give them a five star for their cooperation.</p>
-                    </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Feedback From Some Of Our Clients</h2>
+                <div class="testimonial-grid">
+                    <article class="testimonial-card">
+                        <img src="./indimges/card/samie.png" alt="Deputy UBOS">
+                        <h3>Deputy UBOS</h3>
+                        <p>I reached out to them to build a business website and they truly outdid themselves. The final product was user-friendly and professional.</p>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <img src="./indimges/card/comfy.png" alt="Lawyer at Uganda High Court">
+                        <h3>Lawyer at Uganda High Court</h3>
+                        <p>They met every request I made and handled revisions quickly. Communication was clear and the quality stayed high throughout.</p>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <img src="./indimges/card/hamza.png" alt="CEO MultiTech">
+                        <h3>CEO MultiTech</h3>
+                        <p>We needed a banking system delivered fast. BeyondCode shipped on time and trained our team on operations after deployment.</p>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <img src="./indimges/card/esi.png" alt="Marketing Director Aviation">
+                        <h3>Marketing Director Aviation</h3>
+                        <p>Amazing teamwork and commitment from start to finish. Their cooperation and delivery quality were excellent.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="sponsor" name="sponsor">
-        <h5 class="center green-text">Some Of Our Partners Include</h5>
-        <div class="img-sponsor">
-            <img src="./indimges/products/sponsors/airbnb.png" alt="airbnb" width="150" height="120" title="airbnb.com">
-            <img src="./indimges/products/sponsors/nasa.png" alt="nasa" width="150" height="120" title="nasa.gov">
-            <img src="./indimges/products/sponsors/slack.png" alt="slack" width="150" height="120" title="slack.com">
-            <img src="./indimges/products/sponsors/umu.png" alt="uganda martyrs university" width="150" height="120" title="umu.ac.ug">
-            <img src="./indimges/products/sponsors/x.png" alt="x" width="150" height="120" title="x.com">
-            <img src="./indimges/products/sponsors/thinkx.png" alt="Thinkx software compny" width="150" height="120" title="thinkxsoftware.com">
-        </div>
-    </section>
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="section-title">Some Of Our Partners Include</h2>
+                <div class="partners-grid">
+                    <img src="./indimges/products/sponsors/airbnb.png" alt="Airbnb">
+                    <img src="./indimges/products/sponsors/nasa.png" alt="NASA">
+                    <img src="./indimges/products/sponsors/slack.png" alt="Slack">
+                    <img src="./indimges/products/sponsors/umu.png" alt="Uganda Martyrs University">
+                    <img src="./indimges/products/sponsors/x.png" alt="X">
+                    <img src="./indimges/products/sponsors/thinkx.png" alt="ThinkX Software">
+                </div>
+            </div>
+        </section>
+    </main>
 
-<script src="inde.js"></script>
-<?php include('<navfooter/footer.php');  ?>
+    <?php include('navfooter/footer.php'); ?>
+</div>
 
-
+<script src="navfooter/navbar.js"></script>
+</body>
 </html>
